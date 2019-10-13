@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @api_v1_account.status %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @api_v1_account.content %>
+</p>
+
+<%= link_to 'Edit', edit_api_v1_account_path(@api_v1_account) %> |
+<%= link_to 'Back', api_v1_accounts_path %>
