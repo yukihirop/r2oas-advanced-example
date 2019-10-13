@@ -1,0 +1,30 @@
+---
+paths:
+  "/rails/active_storage/direct_uploads":
+    post:
+      tags:
+      - active_storage/direct_upload
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: active_storage/direct_upload description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_DirectUpload_POST_201"
+        '422':
+          description: active_storage/direct_upload description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_DirectUpload_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActiveStorage_DirectUpload_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

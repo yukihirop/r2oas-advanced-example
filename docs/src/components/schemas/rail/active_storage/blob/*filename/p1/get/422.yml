@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Rail_ActiveStorage_Blob_*filename_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

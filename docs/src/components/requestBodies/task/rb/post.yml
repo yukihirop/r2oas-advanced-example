@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Task_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Task_RB_POST"

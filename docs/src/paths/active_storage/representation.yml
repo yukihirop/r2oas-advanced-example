@@ -1,0 +1,46 @@
+---
+paths:
+  "/rails/active_storage/representations/{signed_blob_id}/{variation_key}/*filename":
+    get:
+      tags:
+      - active_storage/representation
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_200"
+        '404':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_404"
+        '422':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_422"
+      deprecated: false
+      parameters:
+      - name: signed_blob_id
+        in: path
+        description: signed_blob_id
+        required: true
+        schema:
+          type: integer
+      - name: variation_key
+        in: path
+        description: variation_key
+        required: true
+        schema:
+          type: string
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

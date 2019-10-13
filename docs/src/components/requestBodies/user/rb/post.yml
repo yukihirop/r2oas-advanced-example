@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    User_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/User_RB_POST"

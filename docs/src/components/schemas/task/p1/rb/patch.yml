@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Task_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

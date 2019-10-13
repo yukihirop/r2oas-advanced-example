@@ -1,0 +1,42 @@
+---
+paths:
+  "/rails/conductor/action_mailbox/{inbound_email_id}/reroute":
+    post:
+      tags:
+      - rails/conductor/action_mailbox/reroute
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_201"
+        '404':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_404"
+        '422':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST"
+      parameters:
+      - name: inbound_email_id
+        in: path
+        description: inbound_email_id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

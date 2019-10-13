@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Rail_Conductor_ActionMailbox_InboundEmail_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

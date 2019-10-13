@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Rail_ActionMailbox_Postmark_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

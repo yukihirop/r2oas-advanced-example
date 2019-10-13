@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST"

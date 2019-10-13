@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Rail_ActiveStorage_Representation_*filename_P2_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

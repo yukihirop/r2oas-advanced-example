@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Task_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

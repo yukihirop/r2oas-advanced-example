@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Rail_ActionMailbox_Postmark_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_RB_POST"

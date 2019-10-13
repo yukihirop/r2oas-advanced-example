@@ -1,0 +1,40 @@
+---
+paths:
+  "/rails/active_storage/blobs/{signed_id}/*filename":
+    get:
+      tags:
+      - active_storage/blob
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_200"
+        '404':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_404"
+        '422':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: signed_id
+        in: path
+        description: signed_id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

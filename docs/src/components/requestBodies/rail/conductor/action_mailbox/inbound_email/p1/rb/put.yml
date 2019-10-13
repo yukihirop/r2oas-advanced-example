@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT"

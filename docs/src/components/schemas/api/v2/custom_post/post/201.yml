@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Api_V2_CustomPost_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

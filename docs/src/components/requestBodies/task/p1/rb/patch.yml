@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Task_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Task_P1_RB_PATCH"

@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Api_V2_CustomPost_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V2_CustomPost_P1_RB_PUT"

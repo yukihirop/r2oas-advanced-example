@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    User_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

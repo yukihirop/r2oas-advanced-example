@@ -1,0 +1,30 @@
+---
+paths:
+  "/rails/action_mailbox/postmark/inbound_emails":
+    post:
+      tags:
+      - action_mailbox/ingresses/postmark/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/postmark/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_POST_201"
+        '422':
+          description: action_mailbox/ingresses/postmark/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Postmark_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

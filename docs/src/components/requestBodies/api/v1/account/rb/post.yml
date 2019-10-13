@@ -1,0 +1,8 @@
+---
+components:
+  requestBodies:
+    Api_V1_Account_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V1_Account_RB_POST"

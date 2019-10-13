@@ -1,0 +1,272 @@
+---
+paths:
+  "/users":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_GET_200"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - user
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_POST_201"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/new":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_New_GET_200"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/{id}":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - user
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_204"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - user
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_204"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - user
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/{id}/edit":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean

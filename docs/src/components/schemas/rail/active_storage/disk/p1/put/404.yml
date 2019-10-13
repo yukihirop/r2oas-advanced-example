@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Rail_ActiveStorage_Disk_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

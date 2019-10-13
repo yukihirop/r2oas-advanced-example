@@ -1,0 +1,9 @@
+---
+components:
+  schemas:
+    Task_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
