@@ -1,0 +1,3 @@
+require_relative 'rtsd_path_item_object'
+require_relative 'components/rtsd_schema_object'
+require_relative 'components/rtsd_request_body_object'

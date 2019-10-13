@@ -59,4 +59,95 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # routes_to_swagger_docsの設定
+  require_relative Rails.root.join('docs', 'object', 'all.rb')
+  RoutesToSwaggerDocs.configure do |config|
+    # OpenAPI(V3)しかサポートしてない
+    config.version               = :v3
+    # 現在のディレクトリのdocsに保存(存在してなければ自動で生成する)
+    config.root_dir_path         = "./docs"
+    # 分解したschemaを保存するディレクトリ名はsrc
+    config.schema_save_dir_name  = "src"
+    # 生成されたドキュメントを保存するファイルは、swagger.yml
+    config.doc_save_file_name    = "swagger.yml"
+    # components/schemas(requestBodies, ...) などの擬似ネームスペースの種類を洗濯
+    # :dot(.) or :underbar(_) をサポート
+    config.namespace_type = :underbar
+    
+    ########### docsコマンド実行時で有効 ###################
+
+    # 一度docsコマンドで生成したドキュメントを上書きする
+    config.force_update_schema   = false
+    # タグのネームスペースを利用するか
+    #  コントローラーの名前がApi::V1::TasksControllerなら
+    #  trueの場合) タグ名は「api/v1/task」となる
+    #  falseの場合) タグ名は「task」となる
+    config.use_tag_namespace = true
+    # コンポーネントスキーマ名に擬似ネームスペースを利用するか
+    #  コントローラーの名前がApi::V1::TasksControllerなら(namespace_typeが:underbarの時)
+    #  trueの場合) components/schemas(requestBodies)名はApi_V1_Task
+    #  falseの場合 components/schemas(requestBodies)名はTask
+
+    # docsコマンド実行時に使用するオブジェクトクラスをオーバーライドする事ができる。この例では、
+    # ・全てのエンドポイントparametersにvalidateクエリパラメーターを持たせるためのクラス: RtsdPathItemObject
+    # ・components/schemasを規則的な名前で生成するようにしたクラス:                   Components::RtsdSchemaObject
+    # ・components/requestBodiesを規則的な名前で生成するようにしたクラス:             Components::RtsdRequestBodyObject
+    # を使うようにする。
+    # 残りはデフォルトのクラスを使うようにする。
+    #
+    # config.use_object_classesを上書きする様にする。
+    config.use_object_classes.deep_merge!({
+      path_item_object:               RtsdPathItemObject,
+      components_schema_object:       Components::RtsdSchemaObject,
+      components_request_body_object: Components::RtsdRequestBodyObject
+    })
+
+    # サーバー情報を設定する。
+    # docsコマンド実行時のみ有効
+    config.server.data = [
+      {
+        url: "http://localhost:3000",
+        description: "メイン"
+      },
+      {
+        url: "http://localhost:3001",
+        description: "サブ1"
+      },
+      {
+        url: "http://localhost:3002",
+        description: "サブ2"
+      }
+    ]
+
+    # HTTPメソッド毎にどれだけのHTTPステータスのレスポンスをサポートするか決める
+    # エンドポイントのパスが/tasks/{id}の様にpathパラメーターがある場合は、path_parameterのキーの設定が利用される。
+    # docsコマンド実行時のみ有効
+    config.http_statuses_when_http_method = {
+      get: {
+        default: %w(200 422),
+        path_parameter: %w(200 404 422)
+      },
+      post: {
+        default: %w(201 422),
+        path_parameter: %w(201 404 422)
+      },
+      patch: {
+        default: %w(204 422),
+        path_parameter: %w(204 404 422)
+      },
+      put: {
+        default: %w(204 422),
+        path_parameter: %w(204 404 422)
+      },
+      delete: {
+        default: %w(200 422),
+        path_parameter: %w(200 404 422)
+      }
+    }
+
+    # リクエストボディーを生成するときのHTTPメソッドを指定する
+    # docsコマンド実行時のみ有効
+    config.http_methods_when_generate_request_body = %w[post patch put]
+  end
 end
