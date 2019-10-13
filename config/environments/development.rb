@@ -61,12 +61,13 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # routes_to_swagger_docsの設定
-  require_relative Rails.root.join('docs', 'object', 'all.rb')
+  require_relative Rails.root.join('apidocs', 'object', 'all.rb')
   RoutesToSwaggerDocs.configure do |config|
     # OpenAPI(V3)しかサポートしてない
     config.version               = :v3
     # 現在のディレクトリのdocsに保存(存在してなければ自動で生成する)
-    config.root_dir_path         = "./docs"
+    # 「docs」という名前は使えない。予約語である。
+    config.root_dir_path         = "./apidocs"
     # 分解したschemaを保存するディレクトリ名はsrc
     config.schema_save_dir_name  = "src"
     # 生成されたドキュメントを保存するファイルは、swagger.yml

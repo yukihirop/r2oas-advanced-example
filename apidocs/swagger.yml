@@ -1,0 +1,2870 @@
+---
+openapi: 3.0.0
+externalDocs:
+  description: ''
+  url: ''
+info:
+  title: Swagger API Document Title
+  description: |-
+    This is a sample server Petstore server.  You can find out more about
+                Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
+                #swagger](http://swagger.io/irc/).  For this sample, you can use the api key
+                `special-key` to test the authorization filters.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: ''
+    url: ''
+  license:
+    name: ''
+    url: ''
+  version: 1.0.0
+servers:
+- url: http://localhost:3000
+  description: メイン
+- url: http://localhost:3001
+  description: サブ1
+- url: http://localhost:3002
+  description: サブ2
+tags:
+- name: api/v2/custom_post
+  description: api/v2/custom_post description
+  externalDocs:
+    description: description
+    url: url
+- name: api/v1/account
+  description: api/v1/account description
+  externalDocs:
+    description: description
+    url: url
+- name: task
+  description: task description
+  externalDocs:
+    description: description
+    url: url
+- name: user
+  description: user description
+  externalDocs:
+    description: description
+    url: url
+- name: action_mailbox/ingresses/mandrill/inbound_email
+  description: action_mailbox/ingresses/mandrill/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: action_mailbox/ingresses/postmark/inbound_email
+  description: action_mailbox/ingresses/postmark/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: action_mailbox/ingresses/relay/inbound_email
+  description: action_mailbox/ingresses/relay/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: action_mailbox/ingresses/sendgrid/inbound_email
+  description: action_mailbox/ingresses/sendgrid/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: action_mailbox/ingresses/mailgun/inbound_email
+  description: action_mailbox/ingresses/mailgun/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: rails/conductor/action_mailbox/inbound_email
+  description: rails/conductor/action_mailbox/inbound_email description
+  externalDocs:
+    description: description
+    url: url
+- name: rails/conductor/action_mailbox/reroute
+  description: rails/conductor/action_mailbox/reroute description
+  externalDocs:
+    description: description
+    url: url
+- name: active_storage/blob
+  description: active_storage/blob description
+  externalDocs:
+    description: description
+    url: url
+- name: active_storage/representation
+  description: active_storage/representation description
+  externalDocs:
+    description: description
+    url: url
+- name: active_storage/disk
+  description: active_storage/disk description
+  externalDocs:
+    description: description
+    url: url
+- name: active_storage/direct_upload
+  description: active_storage/direct_upload description
+  externalDocs:
+    description: description
+    url: url
+paths:
+  "/rails/action_mailbox/postmark/inbound_emails":
+    post:
+      tags:
+      - action_mailbox/ingresses/postmark/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/postmark/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_POST_201"
+        '422':
+          description: action_mailbox/ingresses/postmark/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Postmark_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/action_mailbox/sendgrid/inbound_emails":
+    post:
+      tags:
+      - action_mailbox/ingresses/sendgrid/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/sendgrid/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Sendgrid_InboundEmail_POST_201"
+        '422':
+          description: action_mailbox/ingresses/sendgrid/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Sendgrid_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Sendgrid_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/action_mailbox/mandrill/inbound_emails":
+    post:
+      tags:
+      - action_mailbox/ingresses/mandrill/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/mandrill/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Mandrill_InboundEmail_POST_201"
+        '422':
+          description: action_mailbox/ingresses/mandrill/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Mandrill_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Mandrill_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/action_mailbox/mailgun/inbound_emails/mime":
+    post:
+      tags:
+      - action_mailbox/ingresses/mailgun/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/mailgun/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Mailgun_InboundEmail_Mime_POST_201"
+        '422':
+          description: action_mailbox/ingresses/mailgun/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Mailgun_InboundEmail_Mime_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Mailgun_InboundEmail_Mime_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/action_mailbox/relay/inbound_emails":
+    post:
+      tags:
+      - action_mailbox/ingresses/relay/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: action_mailbox/ingresses/relay/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Relay_InboundEmail_POST_201"
+        '422':
+          description: action_mailbox/ingresses/relay/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActionMailbox_Relay_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActionMailbox_Relay_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/active_storage/disk/{encoded_key}/*filename":
+    get:
+      tags:
+      - active_storage/disk
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_*filename_P1_GET_200"
+        '404':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_*filename_P1_GET_404"
+        '422':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_*filename_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: encoded_key
+        in: path
+        description: encoded_key
+        required: true
+        schema:
+          type: string
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/active_storage/disk/{encoded_token}":
+    put:
+      tags:
+      - active_storage/disk
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_P1_PUT_204"
+        '404':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_P1_PUT_404"
+        '422':
+          description: active_storage/disk description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActiveStorage_Disk_P1_RB_PUT"
+      parameters:
+      - name: encoded_token
+        in: path
+        description: encoded_token
+        required: true
+        schema:
+          type: string
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/active_storage/representations/{signed_blob_id}/{variation_key}/*filename":
+    get:
+      tags:
+      - active_storage/representation
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_200"
+        '404':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_404"
+        '422':
+          description: active_storage/representation description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Representation_*filename_P2_GET_422"
+      deprecated: false
+      parameters:
+      - name: signed_blob_id
+        in: path
+        description: signed_blob_id
+        required: true
+        schema:
+          type: integer
+      - name: variation_key
+        in: path
+        description: variation_key
+        required: true
+        schema:
+          type: string
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/active_storage/blobs/{signed_id}/*filename":
+    get:
+      tags:
+      - active_storage/blob
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_200"
+        '404':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_404"
+        '422':
+          description: active_storage/blob description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_Blob_*filename_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: signed_id
+        in: path
+        description: signed_id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/active_storage/direct_uploads":
+    post:
+      tags:
+      - active_storage/direct_upload
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: active_storage/direct_upload description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_DirectUpload_POST_201"
+        '422':
+          description: active_storage/direct_upload description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_ActiveStorage_DirectUpload_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_ActiveStorage_DirectUpload_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_GET_200"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - user
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_POST_201"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/new":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_New_GET_200"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/{id}":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - user
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_204"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - user
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_204"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/User_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - user
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/users/{id}/edit":
+    get:
+      tags:
+      - user
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_200"
+        '404':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_404"
+        '422':
+          description: user description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v1/accounts":
+    get:
+      tags:
+      - api/v1/account
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_GET_200"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - api/v1/account
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_POST_201"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V1_Account_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v1/accounts/new":
+    get:
+      tags:
+      - api/v1/account
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_New_GET_200"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v1/accounts/{id}":
+    get:
+      tags:
+      - api/v1/account
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_GET_200"
+        '404':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_GET_404"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - api/v1/account
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PATCH_204"
+        '404':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PATCH_404"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V1_Account_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - api/v1/account
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PUT_204"
+        '404':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PUT_404"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V1_Account_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - api/v1/account
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_DELETE_200"
+        '404':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_DELETE_404"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v1/accounts/{id}/edit":
+    get:
+      tags:
+      - api/v1/account
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_Edit_P1_GET_200"
+        '404':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_Edit_P1_GET_404"
+        '422':
+          description: api/v1/account description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V1_Account_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v2/custom_posts":
+    get:
+      tags:
+      - api/v2/custom_post
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_GET_200"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - api/v2/custom_post
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_POST_201"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V2_CustomPost_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v2/custom_posts/new":
+    get:
+      tags:
+      - api/v2/custom_post
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_New_GET_200"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v2/custom_posts/{id}":
+    get:
+      tags:
+      - api/v2/custom_post
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_GET_200"
+        '404':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_GET_404"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - api/v2/custom_post
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PATCH_204"
+        '404':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PATCH_404"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V2_CustomPost_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - api/v2/custom_post
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PUT_204"
+        '404':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PUT_404"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Api_V2_CustomPost_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - api/v2/custom_post
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_DELETE_200"
+        '404':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_DELETE_404"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/api/v2/custom_posts/{id}/edit":
+    get:
+      tags:
+      - api/v2/custom_post
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_Edit_P1_GET_200"
+        '404':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_Edit_P1_GET_404"
+        '422':
+          description: api/v2/custom_post description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Api_V2_CustomPost_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/tasks":
+    get:
+      tags:
+      - task
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_GET_200"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - task
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_POST_201"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Task_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/tasks/new":
+    get:
+      tags:
+      - task
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_New_GET_200"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/tasks/{id}":
+    get:
+      tags:
+      - task
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_GET_200"
+        '404':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_GET_404"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - task
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PATCH_204"
+        '404':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PATCH_404"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Task_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - task
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PUT_204"
+        '404':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PUT_404"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Task_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - task
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_DELETE_200"
+        '404':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_DELETE_404"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/tasks/{id}/edit":
+    get:
+      tags:
+      - task
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_Edit_P1_GET_200"
+        '404':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_Edit_P1_GET_404"
+        '422':
+          description: task description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Task_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/conductor/action_mailbox/inbound_emails":
+    get:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_GET_200"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    post:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_POST_201"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_Conductor_ActionMailbox_InboundEmail_RB_POST"
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/conductor/action_mailbox/inbound_emails/new":
+    get:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_New_GET_200"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_New_GET_422"
+      deprecated: false
+      parameters:
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/conductor/action_mailbox/inbound_emails/{id}":
+    get:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_200"
+        '404':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_404"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    patch:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: patch summary
+      description: patch description
+      responses:
+        '204':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_204"
+        '404':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_404"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PATCH"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    put:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: put summary
+      description: put description
+      responses:
+        '204':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_204"
+        '404':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_404"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT"
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+    delete:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: delete summary
+      description: delete description
+      responses:
+        '200':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_200"
+        '404':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_404"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/conductor/action_mailbox/inbound_emails/{id}/edit":
+    get:
+      tags:
+      - rails/conductor/action_mailbox/inbound_email
+      summary: get summary
+      description: get description
+      responses:
+        '200':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_200"
+        '404':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_404"
+        '422':
+          description: rails/conductor/action_mailbox/inbound_email description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_422"
+      deprecated: false
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+  "/rails/conductor/action_mailbox/{inbound_email_id}/reroute":
+    post:
+      tags:
+      - rails/conductor/action_mailbox/reroute
+      summary: post summary
+      description: post description
+      responses:
+        '201':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_201"
+        '404':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_404"
+        '422':
+          description: rails/conductor/action_mailbox/reroute description
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_POST_422"
+      deprecated: false
+      requestBody:
+        "$ref": "#/components/requestBodies/Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST"
+      parameters:
+      - name: inbound_email_id
+        in: path
+        description: inbound_email_id
+        required: true
+        schema:
+          type: integer
+      - name: validate
+        in: query
+        description: validationモードか否か
+        schema:
+          type: boolean
+components:
+  schemas:
+    Rail_ActionMailbox_Postmark_InboundEmail_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Postmark_InboundEmail_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Postmark_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Sendgrid_InboundEmail_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Sendgrid_InboundEmail_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Sendgrid_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mandrill_InboundEmail_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mandrill_InboundEmail_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mandrill_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mailgun_InboundEmail_Mime_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mailgun_InboundEmail_Mime_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Mailgun_InboundEmail_Mime_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Relay_InboundEmail_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Relay_InboundEmail_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActionMailbox_Relay_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_*filename_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_*filename_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_*filename_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Disk_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Representation_*filename_P2_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Representation_*filename_P2_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Representation_*filename_P2_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Blob_*filename_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Blob_*filename_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_Blob_*filename_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_DirectUpload_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_DirectUpload_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_ActiveStorage_DirectUpload_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PATCH_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PATCH_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PATCH_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_DELETE_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_DELETE_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_P1_DELETE_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_Edit_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_Edit_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    User_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PATCH_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PATCH_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PATCH_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_DELETE_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_DELETE_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_P1_DELETE_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_Edit_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_Edit_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V1_Account_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PATCH_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PATCH_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PATCH_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_DELETE_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_DELETE_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_P1_DELETE_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_Edit_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_Edit_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Api_V2_CustomPost_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PATCH_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PATCH_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PATCH_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_DELETE_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_DELETE_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_P1_DELETE_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_Edit_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_Edit_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Task_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_New_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_New_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PATCH_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PATCH:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_204:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_PUT_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_DELETE_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_InboundEmail_Edit_P1_GET_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_Reroute_P1_POST_201:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_Reroute_P1_POST_404:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_Reroute_P1_POST_422:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+  requestBodies:
+    Rail_ActionMailbox_Postmark_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Postmark_InboundEmail_RB_POST"
+    Rail_ActionMailbox_Sendgrid_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Sendgrid_InboundEmail_RB_POST"
+    Rail_ActionMailbox_Mandrill_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Mandrill_InboundEmail_RB_POST"
+    Rail_ActionMailbox_Mailgun_InboundEmail_Mime_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Mailgun_InboundEmail_Mime_RB_POST"
+    Rail_ActionMailbox_Relay_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActionMailbox_Relay_InboundEmail_RB_POST"
+    Rail_ActiveStorage_Disk_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActiveStorage_Disk_P1_RB_PUT"
+    Rail_ActiveStorage_DirectUpload_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_ActiveStorage_DirectUpload_RB_POST"
+    User_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/User_RB_POST"
+    User_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/User_P1_RB_PATCH"
+    User_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/User_P1_RB_PUT"
+    Api_V1_Account_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V1_Account_RB_POST"
+    Api_V1_Account_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V1_Account_P1_RB_PATCH"
+    Api_V1_Account_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V1_Account_P1_RB_PUT"
+    Api_V2_CustomPost_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V2_CustomPost_RB_POST"
+    Api_V2_CustomPost_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V2_CustomPost_P1_RB_PATCH"
+    Api_V2_CustomPost_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Api_V2_CustomPost_P1_RB_PUT"
+    Task_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Task_RB_POST"
+    Task_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Task_P1_RB_PATCH"
+    Task_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Task_P1_RB_PUT"
+    Rail_Conductor_ActionMailbox_InboundEmail_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_RB_POST"
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PATCH:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PATCH"
+    Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_InboundEmail_P1_RB_PUT"
+    Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST:
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Rail_Conductor_ActionMailbox_Reroute_P1_RB_POST"
