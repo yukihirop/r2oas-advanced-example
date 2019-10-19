@@ -17,7 +17,7 @@ $ docker pull swaggerapi/swagger-editor:latest
 
 ## 試し方
 
-`routes_to_apidocs` の設定に関しては、 `config/environments/development.rb` をご覧ください。
+`r2-oas` の設定に関しては、 `config/environments/development.rb` をご覧ください。
 
 各設定に説明を書いております。
 この例では、
