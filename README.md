@@ -17,7 +17,7 @@ $ docker pull swaggerapi/swagger-editor:latest
 
 ## 試し方
 
-`routes_to_swagger_docs` の設定に関しては、 `config/environments/development.rb` をご覧ください。
+`routes_to_apidocs` の設定に関しては、 `config/environments/development.rb` をご覧ください。
 
 各設定に説明を書いております。
 この例では、
@@ -35,11 +35,11 @@ $ docker pull swaggerapi/swagger-editor:latest
 $ # 全体を表示する
 $ bundle exec routes:oas:ui
 $ # 特定のpathsファイル(単体)だけ表示する
-$ PATHS_FILE=swagger_docs/src/paths/api/v1/account.yml bundle exec routes:oas:ui
+$ PATHS_FILE=apidocs/src/paths/api/v1/account.yml bundle exec routes:oas:ui
 $ # 特定のpathsファイル(複数)だけ表示する
-$ echo 'api/v1/account.yml' >> swagger_docs/.paths
-$ echo 'api/v2/custom_post.yml' >> swagger_docs/.paths
-$ echo 'task.yml' >> swagger_docs/.paths
+$ echo 'api/v1/account.yml' >> apidocs/.paths
+$ echo 'api/v2/custom_post.yml' >> apidocs/.paths
+$ echo 'task.yml' >> apidocs/.paths
 $ bundle exec routes:oas:ui
 ```
 
@@ -49,11 +49,11 @@ $ bundle exec routes:oas:ui
 $ # 全体を編集する
 $ bundle exec routes:oas:editor
 $ # 特定のpathsファイル(単数)だけを編集する
-$ PATHS_FILE=swagger_docs/src/paths/api/v1/account.yml bundle exec routes:oas:editor
+$ PATHS_FILE=apidocs/src/paths/api/v1/account.yml bundle exec routes:oas:editor
 $ # 特定のpathsファイル(複数)だけ編集する
-$ echo 'api/v1/account.yml' >> swagger_docs/.paths
-$ echo 'api/v2/custom_post.yml' >> swagger_docs/.paths
-$ echo 'task.yml' >> swagger_docs/.paths
+$ echo 'api/v1/account.yml' >> apidocs/.paths
+$ echo 'api/v2/custom_post.yml' >> apidocs/.paths
+$ echo 'task.yml' >> apidocs/.paths
 $ bundle exec routes:oas:editor
 ```
 
@@ -65,13 +65,13 @@ vscodeを使っている場合は、[SwaggerViewer](https://marketplace.visualst
 
 ```bash
 $ # 全体を編集する
-$ bundle exec routes:oas:monitor   # swagger_docs/swagger_doc.ymlファイルを編集する。
+$ bundle exec routes:oas:monitor   # apidocs/swagger_doc.ymlファイルを編集する。
 $ # 特定のpathsファイル(単数)だけを編集する
-$ PATHS_FILE=swagger_docs/src/paths/api/v1/account.yml bundle exec routes:oas:monitor
+$ PATHS_FILE=apidocs/src/paths/api/v1/account.yml bundle exec routes:oas:monitor
 $ # 特定のpathsファイル(複数)だけ編集する
-$ echo 'api/v1/account.yml' >> swagger_docs/.paths
-$ echo 'api/v2/custom_post.yml' >> swagger_docs/.paths
-$ echo 'task.yml' >> swagger_docs/.paths
+$ echo 'api/v1/account.yml' >> apidocs/.paths
+$ echo 'api/v2/custom_post.yml' >> apidocs/.paths
+$ echo 'task.yml' >> apidocs/.paths
 $ bundle exec routes:oas:monitor
 ```
 
@@ -83,11 +83,11 @@ $ bundle exec routes:oas:monitor
 $ # 全体を配布する
 $ bundle exec routes:oas:dist
 $ # 特定のpathsファイル(単数)だけを配布する
-$ PATHS_FILE=swagger_docs/src/paths/api/v1/account.yml bundle exec routes:oas:dist
+$ PATHS_FILE=apidocs/src/paths/api/v1/account.yml bundle exec routes:oas:dist
 $ # 特定のpathsファイル(複数)だけ配布する
-$ echo 'api/v1/account.yml' >> swagger_docs/.paths
-$ echo 'api/v2/custom_post.yml' >> swagger_docs/.paths
-$ echo 'task.yml' >> swagger_docs/.paths
+$ echo 'api/v1/account.yml' >> apidocs/.paths
+$ echo 'api/v2/custom_post.yml' >> apidocs/.paths
+$ echo 'task.yml' >> apidocs/.paths
 $ bundle exec routes:oas:dist
 ```
 

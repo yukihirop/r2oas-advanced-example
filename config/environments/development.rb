@@ -60,7 +60,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # routes_to_swagger_docsの設定
+  # r2-oasの設定
   require_relative Rails.root.join('apidocs', 'object', 'all.rb')
   R2OAS.configure do |config|
     # OpenAPI(V3)しかサポートしてない
