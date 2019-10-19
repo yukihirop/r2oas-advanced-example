@@ -1,5 +1,5 @@
 module Components
-  class RtsdRequestBodyObject < RoutesToSwaggerDocs::Schema::V3::Components::RequestBodyObject
+  class RtsdRequestBodyObject < R2OAS::Schema::V3::Components::RequestBodyObject
     NS_DIV = '_'
 
     # 例) components/requestBodies名のpathとの関係は以下の通り

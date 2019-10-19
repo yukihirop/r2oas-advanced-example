@@ -62,7 +62,7 @@ Rails.application.configure do
 
   # routes_to_swagger_docsの設定
   require_relative Rails.root.join('apidocs', 'object', 'all.rb')
-  RoutesToSwaggerDocs.configure do |config|
+  R2OAS.configure do |config|
     # OpenAPI(V3)しかサポートしてない
     config.version               = :v3
     # 現在のディレクトリのdocsに保存(存在してなければ自動で生成する)

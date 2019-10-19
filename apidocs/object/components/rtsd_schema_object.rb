@@ -1,5 +1,5 @@
 module Components
-  class RtsdSchemaObject < RoutesToSwaggerDocs::Schema::V3::Components::SchemaObject
+  class RtsdSchemaObject < R2OAS::Schema::V3::Components::SchemaObject
     NS_DIV = '_'
 
     # 例) components/schemas名のpathとの関係は以下の通り

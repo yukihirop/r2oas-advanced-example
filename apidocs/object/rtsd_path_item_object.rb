@@ -1,4 +1,4 @@
-class RtsdPathItemObject < RoutesToSwaggerDocs::Schema::V3::PathItemObject
+class RtsdPathItemObject < R2OAS::Schema::V3::PathItemObject
   after_create do |doc, path|
     doc.keys.each do |verb|
       doc[verb]["parameters"] ||= []
