@@ -65,8 +65,7 @@ Rails.application.configure do
   R2OAS.configure do |config|
     # OpenAPI(V3)しかサポートしてない
     config.version               = :v3
-    # 現在のディレクトリのdocsに保存(存在してなければ自動で生成する)
-    # 「docs」という名前は使えない。予約語である。
+    # 現在のディレクトリのapidocsに保存(存在してなければ自動で生成する)
     config.root_dir_path         = "./apidocs"
     # 分解したschemaを保存するディレクトリ名はsrc
     config.schema_save_dir_name  = "src"
@@ -75,6 +74,8 @@ Rails.application.configure do
     # components/schemas(requestBodies, ...) などの擬似ネームスペースの種類を洗濯
     # :dot(.) or :underbar(_) をサポート
     config.namespace_type = :underbar
+    # デプロイファイルの保存先
+    config.deploy_dir_path = "./dist_docs"
     
     ########### docsコマンド実行時で有効 ###################
 
