@@ -65,7 +65,7 @@ vscodeを使っている場合は、[SwaggerViewer](https://marketplace.visualst
 
 ```bash
 $ # 全体を編集する
-$ bundle exec routes:oas:monitor   # apidocs/swagger_doc.ymlファイルを編集する。
+$ bundle exec routes:oas:monitor   # apidocs/swagger.ymlファイルを編集する。
 $ # 特定のpathsファイル(単数)だけを編集する
 $ PATHS_FILE=apidocs/src/paths/api/v1/account.yml bundle exec routes:oas:monitor
 $ # 特定のpathsファイル(複数)だけ編集する
