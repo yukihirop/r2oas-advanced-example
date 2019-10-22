@@ -1,6 +1,6 @@
 ---
 info:
-  title: Swagger API Document Title
+  title: OAS API Document Title
   description: |-
     This is a sample server Petstore server.  You can find out more about
                 Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
